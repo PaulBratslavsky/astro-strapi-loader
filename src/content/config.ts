@@ -19,7 +19,7 @@ function strapiLoader({ contentType }: { contentType: string }): Loader {
       case "string":
         return z.string();
       case "uid":
-        return z.string(); // Assuming 'uid' is treated as a string
+        return z.string(); 
       case "media":
         return z.object({
           allowedTypes: z.array(z.enum(field.allowedTypes)),
@@ -27,7 +27,7 @@ function strapiLoader({ contentType }: { contentType: string }): Loader {
           multiple: z.boolean(),
         });
       case "richtext":
-        return z.string(); // Assuming 'richtext' is treated as a string
+        return z.string(); 
       case "datetime":
         return z.string().datetime();
       case "relation":
@@ -47,7 +47,7 @@ function strapiLoader({ contentType }: { contentType: string }): Loader {
       case "number":
         return z.number();
       case "array":
-        return z.array(mapTypeToZodSchema(field.items.type, field.items)); // Recursively map array items
+        return z.array(mapTypeToZodSchema(field.items.type, field.items)); 
       case "object":
         const shape: Record<string, ZodTypeAny> = {};
         
