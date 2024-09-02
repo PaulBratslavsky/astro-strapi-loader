@@ -1,11 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from "astro:content";
+
+
 const strapiPostsLoader = await getCollection("strapiPostsLoader");
-
-
-
-
 console.log("strapiPostsLoader", strapiPostsLoader[0].data);
 
 
